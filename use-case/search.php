@@ -1,9 +1,7 @@
 <?php
 
-interface Command {
-    public function execute();
-}
-class searchInCsv implements Command {
+
+class SearchInCsvUseCase {
     private $fileName;
     private $index;
     private $searchTerm;
@@ -12,7 +10,7 @@ class searchInCsv implements Command {
         $this->fileName = $fileName;
         $this->searchTerm = $searchTerm;
     }
-    public function execute() {
+    public function search() {
         $handle = fopen($this->fileName, "r");
 
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {

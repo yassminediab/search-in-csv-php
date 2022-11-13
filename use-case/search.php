@@ -1,7 +1,10 @@
 <?php
 
+interface ISearchInCsvUseCase {
+    public function search();
+}
 
-class SearchInCsvUseCase {
+class SearchInCsvUseCase implements ISearchInCsvUseCase{
     private $fileName;
     private $index;
     private $searchTerm;
